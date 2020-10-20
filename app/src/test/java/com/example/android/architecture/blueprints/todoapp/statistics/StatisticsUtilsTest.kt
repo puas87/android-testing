@@ -19,7 +19,7 @@ class StatisticsUtilsTest {
 
         // Check the result
         assertThat(result.completedTasksPercent, `is`(0f))
-        assertThat(result.completedTasksPercent, `is`(100f))
+        assertThat(result.activeTasksPercent, `is`(100f))
     }
 
     //If there is one completed task and no active tasks,
