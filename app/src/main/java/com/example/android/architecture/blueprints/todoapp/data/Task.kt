@@ -46,4 +46,26 @@ data class Task @JvmOverloads constructor(
 
     val isEmpty
         get() = title.isEmpty() || description.isEmpty()
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Task
+
+        if (title != other.title) return false
+        if (description != other.description) return false
+        if (isCompleted != other.isCompleted) return false
+        if (id != other.id) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = title.hashCode()
+        result = 31 * result + description.hashCode()
+        result = 31 * result + isCompleted.hashCode()
+        result = 31 * result + id.hashCode()
+        return result
+    }
 }
