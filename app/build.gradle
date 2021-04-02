@@ -43,6 +43,11 @@ android {
         exclude "META-INF/LGPL2.1"
     }
 
+    testOptions.unitTests {
+        includeAndroidResources = true
+        returnDefaultValues = true
+    }
+
 }
 
 dependencies {
@@ -58,6 +63,8 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
     implementation "androidx.room:room-runtime:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
+
+    implementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
 
     // Architecture Components
     implementation "androidx.room:room-runtime:$roomVersion"
