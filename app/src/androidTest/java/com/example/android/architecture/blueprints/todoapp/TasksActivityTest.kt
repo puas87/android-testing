@@ -114,6 +114,8 @@ class TasksActivityTest {
         // 4. Click delete task in menu.
         onView(withId(R.id.menu_delete)).perform(click())
         // 5. Verify it was deleted.
+        onView(withId(R.id.menu_filter)).perform(click())
+        onView(withText(R.string.nav_all)).perform(click())
         onView(withText("TITLE")).check(doesNotExist())
         // 6. Make sure the activity is closed.
         activityScenario.close()
